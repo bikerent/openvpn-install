@@ -12,18 +12,12 @@ You can also check out [wireguard-install](https://github.com/angristan/wireguar
 
 ## Usage
 
-First, get the script and make it executable:
+RUN:
 
 ```bash
-curl -O https://raw.githubusercontent.com/angristan/openvpn-install/master/openvpn-install.sh
-chmod +x openvpn-install.sh
+curl -O https://raw.githubusercontent.com/bikerent/openvpn-install/master/openvpn-install.sh && chmod +x openvpn-install.sh && sudo AUTO_INSTALL=y ./openvpn-install.sh
 ```
 
-Then run it:
-
-```sh
-./openvpn-install.sh
-```
 
 You need to run the script as root and have the TUN module enabled.
 
