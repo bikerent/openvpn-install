@@ -325,7 +325,7 @@ function installQuestions() {
 	echo "   11) AdGuard DNS (Anycast: worldwide)"
 	echo "   12) NextDNS (Anycast: worldwide)"
 	echo "   13) Custom"
-	until [[ $DNS =~ ^[0-9]+$ ]] && [ "$DNS" -ge 1 ] && [ "$DNS" -le 8 ]; do
+	until [[ $DNS =~ ^[0-9]+$ ]] && [ "$DNS" -ge 1 ] && [ "$DNS" -le 13 ]; do
 		read -rp "DNS [1-12]: " -e -i 8 DNS
 		if [[ $DNS == 2 ]] && [[ -e /etc/unbound/unbound.conf ]]; then
 			echo ""
@@ -1064,7 +1064,6 @@ function newClient() {
 	echo "The name must consist of alphanumeric character. It may also include an underscore or a dash."
 
 	until [[ $CLIENT =~ ^[a-zA-Z0-9_-]+$ ]]; do
-    CLIENT="client"
 		read -rp "Client name: " -e CLIENT
 	done
 
