@@ -228,7 +228,7 @@ function installQuestions() {
 	echo "Unless your server is behind NAT, it should be your public IPv4 address."
 
 	# Detect public IPv4 address and pre-fill for the user
-	IP=$(ip -4 addr | sed -ne 's|^.* inet \([^/]*\)/.* scope global.*$|\1|p' | head -1)
+	IP=$(curl -s https://api.ipify.org)
 
 	if [[ -z $IP ]]; then
 		# Detect public IPv6 address
